@@ -143,15 +143,15 @@ require_once 'includes/auth_functions.php';
             <p>The University Marketplace for Affordable Student Essentials, Books, Supplies & Campus Merchandise.</p>
             <?php if (!isLoggedIn()): ?>
                 <div>
-                    <a href="/auth/register.php" class="btn" style="margin-right: 10px;">Join Now</a>
-                    <a href="/auth/login.php" class="btn btn-secondary">Sign In</a>
+                    <a href="/public/auth/register.php" class="btn" style="margin-right: 10px;">Join Now</a>
+                    <a href="/public/auth/login.php" class="btn btn-secondary">Sign In</a>
                 </div>
             <?php else: ?>
                 <div>
                     <?php if (isCustomer()): ?>
-                        <a href="/customer/products/browse.php" class="btn">Browse Products</a>
+                        <a href="/public/customer/products/browse.php" class="btn">Browse Products</a>
                     <?php else: ?>
-                        <a href="/owner/dashboard.php" class="btn">Go to Dashboard</a>
+                        <a href="/public/owner/dashboard.php" class="btn">Go to Dashboard</a>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
