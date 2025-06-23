@@ -51,8 +51,8 @@ $total_pages = ceil($total_orders / $per_page);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Orders - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .back-link {
@@ -182,7 +182,7 @@ $total_pages = ceil($total_orders / $per_page);
     <?php include '../../includes/header.php'; ?>
     
     <div class="container orders-container">
-        <a href="/unimarket/customer/profile.php" class="back-link">
+        <a href="/customer/profile.php" class="back-link">
             <i class="fas fa-arrow-left"></i> Back to Profile
         </a>
         <h1>My Orders</h1>
@@ -192,7 +192,7 @@ $total_pages = ceil($total_orders / $per_page);
                 <i class="fas fa-box-open" style="font-size: 3em; color: #ccc; margin-bottom: 20px;"></i>
                 <h3>You haven't placed any orders yet</h3>
                 <p>Start shopping to see your orders here</p>
-                <a href="/unimarket/customer/products/browse.php" class="btn">Browse Products</a>
+                <a href="/customer/products/browse.php" class="btn">Browse Products</a>
             </div>
         <?php else: ?>
             <table class="orders-table">
@@ -209,7 +209,7 @@ $total_pages = ceil($total_orders / $per_page);
                     <?php foreach ($orders as $order): ?>
                         <tr>
                             <td>
-                                <a href="/unimarket/customer/orders/view.php?order_id=<?php echo $order['order_id']; ?>">
+                                <a href="/customer/orders/view.php?order_id=<?php echo $order['order_id']; ?>">
                                     #<?php echo $order['order_id']; ?>
                                 </a>
                             </td>
