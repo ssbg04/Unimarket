@@ -7,7 +7,7 @@ require_once '../../config/database.php';
 
 // Check if order ID is provided
 if (!isset($_GET['order_id'])) {
-    header("Location: /unimarket/owner/orders/list.php");
+    header("Location: /owner/orders/list.php");
     exit();
 }
 
@@ -26,7 +26,7 @@ $stmt->execute([$order_id, $_SESSION['user_id']]);
 $valid_order = $stmt->fetch();
 
 if (!$valid_order) {
-    header("Location: /unimarket/owner/orders/list.php");
+    header("Location: /owner/orders/list.php");
     exit();
 }
 
@@ -97,8 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order #<?php echo $order_id; ?> - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .order-detail-container {
@@ -308,7 +308,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
     <?php include '../../includes/header.php'; ?>
     
     <div class="container order-detail-container">
-        <a href="/unimarket/owner/orders/list.php" class="back-link">
+        <a href="/owner/orders/list.php" class="back-link">
             <i class="fas fa-arrow-left"></i> Back to Orders
         </a>
         
@@ -430,7 +430,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
                                 <div class="product-cell">
                                     <div class="product-image">
                                         <?php if ($item['image_path']): ?>
-                                            <img src="/unimarket/assets/images/products/<?php echo $item['image_path']; ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
+                                            <img src="/assets/images/products/<?php echo $item['image_path']; ?>" alt="<?php echo htmlspecialchars($item['name']); ?>">
                                         <?php else: ?>
                                             <i class="fas fa-box-open" style="color: #ccc;"></i>
                                         <?php endif; ?>
