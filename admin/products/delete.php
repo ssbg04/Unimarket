@@ -7,7 +7,7 @@ require_once '../../config/database.php';
 
 // Check if product ID is provided
 if (!isset($_GET['id'])) {
-    header('Location: /unimarket/admin/dashboard.php');
+    header('Location: /admin/dashboard.php');
     exit;
 }
 
@@ -19,7 +19,7 @@ $stmt->execute([$product_id, $_SESSION['user_id']]);
 $product = $stmt->fetch();
 
 if (!$product) {
-    header('Location: /unimarket/admin/dashboard.php');
+    header('Location: /admin/dashboard.php');
     exit;
 }
 
@@ -37,10 +37,10 @@ try {
     $stmt->execute([$product_id, $_SESSION['user_id']]);
     
     // Redirect back to dashboard with success message
-    header('Location: /unimarket/admin/dashboard.php?message=Product deleted successfully');
+    header('Location: /admin/dashboard.php?message=Product deleted successfully');
     exit;
 } catch (PDOException $e) {
     // Redirect back to dashboard with error message
-    header('Location: /unimarket/admin/dashboard.php?error=Failed to delete product');
+    header('Location: /admin/dashboard.php?error=Failed to delete product');
     exit;
 } 
