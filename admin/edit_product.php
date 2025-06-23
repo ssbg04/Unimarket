@@ -129,8 +129,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Product - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         .edit-product {
@@ -360,7 +360,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-group">
                 <label for="image">Product Image</label>
                 <?php if ($product['image_path']): ?>
-                    <img src="/unimarket/uploads/products/<?php echo htmlspecialchars($product['image_path']); ?>" class="image-preview" style="display: block;">
+                    <img src="/uploads/products/<?php echo htmlspecialchars($product['image_path']); ?>" class="image-preview" style="display: block;">
                 <?php endif; ?>
                 <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(this)">
                 <img id="imagePreview" class="image-preview">
