@@ -56,8 +56,8 @@ error_log("Orders query result: " . print_r($orders, true));
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Orders - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .orders-container {
@@ -277,11 +277,11 @@ error_log("Orders query result: " . print_r($orders, true));
                                             </td>
                                             <td>
                                                 <?php if ($order['status'] !== 'completed' && $order['status'] !== 'cancelled'): ?>
-                                                    <a href="/unimarket/owner/orders/schedule_pickup.php?order_id=<?php echo $order['order_id']; ?>" class="action-link">
+                                                    <a href="/owner/orders/schedule_pickup.php?order_id=<?php echo $order['order_id']; ?>" class="action-link">
                                                         <i class="fas fa-calendar-alt"></i> Schedule
                                                     </a>
                                                 <?php endif; ?>
-                                                <a href="/unimarket/owner/orders/view.php?order_id=<?php echo $order['order_id']; ?>" class="action-link">
+                                                <a href="/owner/orders/view.php?order_id=<?php echo $order['order_id']; ?>" class="action-link">
                                                     <i class="fas fa-eye"></i> View
                                                 </a>
                                             </td>
