@@ -17,8 +17,8 @@ $products = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Products - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .products-container {
@@ -143,7 +143,7 @@ $products = $stmt->fetchAll();
                     <div class="container products-container">
                         <div class="products-header">
                             <h1>My Products</h1>
-                            <a href="/unimarket/owner/products/add.php" class="btn" style="background-color: #28a745; color: white;">
+                            <a href="/owner/products/add.php" class="btn" style="background-color: #28a745; color: white;">
                                 <i class="fas fa-plus"></i> Add Product
                             </a>
                         </div>
@@ -153,7 +153,7 @@ $products = $stmt->fetchAll();
                                 <i class="fas fa-box-open" style="font-size: 3em; color: #ccc; margin-bottom: 20px;"></i>
                                 <h3>You don't have any products yet</h3>
                                 <p>Add your first product to start selling</p>
-                                <a href="/unimarket/owner/products/add.php" class="btn">Add Product</a>
+                                <a href="/owner/products/add.php" class="btn">Add Product</a>
                             </div>
                         <?php else: ?>
                             <table class="products-table">
@@ -173,7 +173,7 @@ $products = $stmt->fetchAll();
                                                 <div class="product-cell">
                                                     <div class="product-image">
                                                         <?php if ($product['image_path']): ?>
-                                                            <img src="/unimarket/uploads/products/<?php echo $product['image_path']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                                                            <img src="/uploads/products/<?php echo $product['image_path']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                                                         <?php else: ?>
                                                             <i class="fas fa-box-open" style="color: #ccc;"></i>
                                                         <?php endif; ?>
@@ -190,10 +190,10 @@ $products = $stmt->fetchAll();
                                             </td>
                                             <td><?php echo htmlspecialchars($product['category']); ?></td>
                                             <td>
-                                                <a href="/unimarket/owner/products/edit.php?id=<?php echo $product['product_id']; ?>" class="action-link edit">
+                                                <a href="/owner/products/edit.php?id=<?php echo $product['product_id']; ?>" class="action-link edit">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </a>
-                                                <a href="/unimarket/owner/products/delete.php?id=<?php echo $product['product_id']; ?>" class="action-link delete" onclick="return confirm('Are you sure you want to delete this product?')">
+                                                <a href="/owner/products/delete.php?id=<?php echo $product['product_id']; ?>" class="action-link delete" onclick="return confirm('Are you sure you want to delete this product?')">
                                                     <i class="fas fa-trash"></i> Delete
                                                 </a>
                                             </td>
