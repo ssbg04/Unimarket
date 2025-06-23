@@ -7,7 +7,7 @@ require_once '../../config/database.php';
 
 // Check if order ID is provided
 if (!isset($_GET['order_id'])) {
-    header("Location: /unimarket/owner/orders/list.php");
+    header("Location: /owner/orders/list.php");
     exit();
 }
 
@@ -26,7 +26,7 @@ $stmt->execute([$order_id, $_SESSION['user_id']]);
 $valid_order = $stmt->fetch();
 
 if (!$valid_order) {
-    header("Location: /unimarket/owner/orders/list.php");
+    header("Location: /owner/orders/list.php");
     exit();
 }
 
@@ -73,8 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Pickup - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
@@ -162,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include '../../includes/header.php'; ?>
     
     <div class="container schedule-container">
-        <a href="/unimarket/owner/orders/list.php" class="back-link">
+        <a href="/owner/orders/list.php" class="back-link">
             <i class="fas fa-arrow-left"></i> Back to Orders
         </a>
         
