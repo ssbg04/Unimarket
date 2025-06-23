@@ -53,8 +53,8 @@ $admin = $admin_stmt->fetch();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         .admin-dashboard {
@@ -391,18 +391,18 @@ $admin = $admin_stmt->fetch();
         </div>
         
         <div class="admin-actions">
-            <a href="/unimarket/admin/users/manage.php" class="admin-action-btn">
+            <a href="/admin/users/manage.php" class="admin-action-btn">
                 <i class="fas fa-users"></i>
                 <span>Manage Users</span>
             </a>
-            <a href="/unimarket/admin/products/index.php" class="admin-action-btn">
+            <a href="/admin/products/index.php" class="admin-action-btn">
                 <i class="fas fa-box"></i>
                 <span>Manage Products</span>
             </a>
-            <a href="/unimarket/admin/orders/manage.php" class="admin-action-btn">
+            <a href="/admin/orders/manage.php" class="admin-action-btn">
                 <i class="fas fa-shopping-cart"></i> Manage Orders
             </a>
-            <a href="/unimarket/admin/products/add.php" class="admin-action-btn">
+            <a href="/admin/products/add.php" class="admin-action-btn">
                 <i class="fas fa-plus"></i> Add My Product
             </a>
         </div>
@@ -410,7 +410,7 @@ $admin = $admin_stmt->fetch();
         <div class="recent-section">
             <div class="section-header">
                 <h2>My Products</h2>
-                <a href="/unimarket/admin/products/add.php" class="btn-add">
+                <a href="/admin/products/add.php" class="btn-add">
                     <i class="fas fa-plus"></i> Add New Product
                 </a>
             </div>
@@ -418,7 +418,7 @@ $admin = $admin_stmt->fetch();
                 <div class="empty-state">
                     <i class="fas fa-box-open"></i>
                     <p>You haven't added any products yet.</p>
-                    <a href="/unimarket/admin/products/add.php" class="btn-primary">Add Your First Product</a>
+                    <a href="/admin/products/add.php" class="btn-primary">Add Your First Product</a>
                 </div>
             <?php else: ?>
                 <table>
@@ -437,9 +437,9 @@ $admin = $admin_stmt->fetch();
                             <tr>
                                 <td>
                                     <?php if (!empty($product['image_path'])): ?>
-                                        <img src="/unimarket/uploads/products/<?php echo htmlspecialchars($product['image_path']); ?>" alt="Product" class="product-image">
+                                        <img src="/uploads/products/<?php echo htmlspecialchars($product['image_path']); ?>" alt="Product" class="product-image">
                                     <?php else: ?>
-                                        <img src="/unimarket/assets/images/no-image.png" alt="No Image" class="product-image">
+                                        <img src="/assets/images/no-image.png" alt="No Image" class="product-image">
                                     <?php endif; ?>
                                 </td>
                                 <td><?php echo htmlspecialchars($product['name']); ?></td>
@@ -454,7 +454,7 @@ $admin = $admin_stmt->fetch();
                                     <a href="edit_product.php?id=<?php echo $product['product_id']; ?>" class="btn-edit">
                                         <i class="fas fa-edit"></i> Edit
                                     </a>
-                                    <a href="/unimarket/admin/products/delete.php?id=<?php echo $product['product_id']; ?>" class="btn-delete" onclick="return confirm('Are you sure you want to delete this product?')">
+                                    <a href="/admin/products/delete.php?id=<?php echo $product['product_id']; ?>" class="btn-delete" onclick="return confirm('Are you sure you want to delete this product?')">
                                         <i class="fas fa-trash"></i> Delete
                                     </a>
                                 </td>
@@ -483,7 +483,7 @@ $admin = $admin_stmt->fetch();
                         <td><?php echo htmlspecialchars($user['email']); ?></td>
                         <td><?php echo htmlspecialchars($user['role']); ?></td>
                         <td>
-                            <a href="/unimarket/admin/users/edit.php?id=<?php echo $user['user_id']; ?>" class="btn-small btn-edit">
+                            <a href="/admin/users/edit.php?id=<?php echo $user['user_id']; ?>" class="btn-small btn-edit">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
                         </td>
@@ -515,7 +515,7 @@ $admin = $admin_stmt->fetch();
                         <td>₱<?php echo number_format($order['total_amount'], 2); ?></td>
                         <td><?php echo ucfirst($order['status']); ?></td>
                         <td>
-                            <a href="/unimarket/admin/orders/view.php?id=<?php echo $order['order_id']; ?>" class="btn-small btn-view">
+                            <a href="/admin/orders/view.php?id=<?php echo $order['order_id']; ?>" class="btn-small btn-view">
                                 <i class="fas fa-eye"></i> View
                             </a>
                         </td>
