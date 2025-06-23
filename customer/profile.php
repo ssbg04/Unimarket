@@ -116,8 +116,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Profile - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .profile-container {
@@ -703,7 +703,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password'])) {
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <a href="/unimarket/customer/orders/list.php" class="view-all-orders">
+                    <a href="/customer/orders/list.php" class="view-all-orders">
                         <i class="fas fa-list"></i> View All Orders
                     </a>
                 <?php endif; ?>
