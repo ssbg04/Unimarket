@@ -8,8 +8,8 @@ require_once 'includes/auth_functions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniMarket - University Marketplace</title>
-    <link rel="stylesheet" href="/public/assets/css/style.css">
-    <link rel="stylesheet" href="/public/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <style>
         header {
             position: fixed;
@@ -143,8 +143,8 @@ require_once 'includes/auth_functions.php';
             <p>The University Marketplace for Affordable Student Essentials, Books, Supplies & Campus Merchandise.</p>
             <?php if (!isLoggedIn()): ?>
                 <div>
-                    <a href="/public/auth/register.php" class="btn" style="margin-right: 10px;">Join Now</a>
-                    <a href="/public/auth/login.php" class="btn btn-secondary">Sign In</a>
+                    <a href="/auth/register.php" class="btn" style="margin-right: 10px;">Join Now</a>
+                    <a href="/auth/login.php" class="btn btn-secondary">Sign In</a>
                 </div>
             <?php else: ?>
                 <div>
@@ -196,7 +196,7 @@ require_once 'includes/auth_functions.php';
                     echo '<div class="product-card"">';
                     echo '<div class="product-image">';
                     if ($product['image_path']) {
-                        echo '<img src="/unimarket/uploads/products/'.$product['image_path'].'" alt="'.htmlspecialchars($product['name']).'">';
+                        echo '<img src="/uploads/products/'.$product['image_path'].'" alt="'.htmlspecialchars($product['name']).'">';
                     } else {
                         echo '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #999;">No Image</div>';
                     }
@@ -206,11 +206,11 @@ require_once 'includes/auth_functions.php';
                     echo '<p class="product-price">₱'.number_format($product['price'], 2).'</p>';
                     
                     if (isLoggedIn()) {
-                        echo '<a href="/unimarket/customer/products/view.php?id='.$product['product_id'].'" class="btn" style="display: block; text-align: center;">';
+                        echo '<a href="/customer/products/view.php?id='.$product['product_id'].'" class="btn" style="display: block; text-align: center;">';
                         echo '<i class="fas fa-eye"></i> View Details';
                         echo '</a>';
                     } else {
-                        echo '<a href="/unimarket/auth/login.php" class="btn" style="display: block; text-align: center;">Login to Purchase</a>';
+                        echo '<a href="/auth/login.php" class="btn" style="display: block; text-align: center;">Login to Purchase</a>';
                     }
                     
                     echo '</div>';
@@ -219,7 +219,7 @@ require_once 'includes/auth_functions.php';
                 
                 echo '</div>';
                 echo '<div style="text-align: center; margin-top: 30px;">';
-                echo '<a href="/unimarket/customer/products/browse.php" class="btn">View All Products</a>';
+                echo '<a href="/customer/products/browse.php" class="btn">View All Products</a>';
                 echo '</div>';
                 echo '</div>';
             }
@@ -232,12 +232,12 @@ require_once 'includes/auth_functions.php';
             <h2>Ready to join the campus marketplace?</h2>
             <p style="max-width: 600px; margin: 0 auto 30px;">Whether you're looking to buy or sell, UniMarket connects you with your university community.</p>
             <?php if (!isLoggedIn()): ?>
-                <a href="/unimarket/auth/register.php" class="btn">Get Started</a>
+                <a href="/auth/register.php" class="btn">Get Started</a>
             <?php else: ?>
                 <?php if (isCustomer()): ?>
-                    <a href="/unimarket/customer/products/browse.php" class="btn">Browse Products</a>
+                    <a href="/customer/products/browse.php" class="btn">Browse Products</a>
                 <?php else: ?>
-                    <a href="/unimarket/owner/products/add.php" class="btn">Add New Product</a>
+                    <a href="/owner/products/add.php" class="btn">Add New Product</a>
                 <?php endif; ?>
             <?php endif; ?>
         </div>
