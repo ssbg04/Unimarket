@@ -11,17 +11,17 @@
                     <div>
                         <h3 style="margin-bottom: 15px; color: var(--light-text);">Quick Links</h3>
                         <ul style="list-style: none;">
-                            <li style="margin-bottom: 8px;"><a href="/unimarket/index.php" style="color: var(--light-text); text-decoration: none;">Home</a></li>
+                            <li style="margin-bottom: 8px;"><a href="/index.php" style="color: var(--light-text); text-decoration: none;">Home</a></li>
                             <?php if (!isLoggedIn()): ?>
-                                <li style="margin-bottom: 8px;"><a href="/unimarket/auth/login.php" style="color: var(--light-text); text-decoration: none;">Login</a></li>
-                                <li style="margin-bottom: 8px;"><a href="/unimarket/auth/register.php" style="color: var(--light-text); text-decoration: none;">Register</a></li>
+                                <li style="margin-bottom: 8px;"><a href="/auth/login.php" style="color: var(--light-text); text-decoration: none;">Login</a></li>
+                                <li style="margin-bottom: 8px;"><a href="/auth/register.php" style="color: var(--light-text); text-decoration: none;">Register</a></li>
                             <?php else: ?>
                                 <?php if (isCustomer()): ?>
-                                    <li style="margin-bottom: 8px;"><a href="/unimarket/customer/products/browse.php" style="color: var(--light-text); text-decoration: none;">Browse Products</a></li>
-                                    <li style="margin-bottom: 8px;"><a href="/unimarket/customer/profile.php" style="color: var(--light-text); text-decoration: none;">My Profile</a></li>
+                                    <li style="margin-bottom: 8px;"><a href="/customer/products/browse.php" style="color: var(--light-text); text-decoration: none;">Browse Products</a></li>
+                                    <li style="margin-bottom: 8px;"><a href="/customer/profile.php" style="color: var(--light-text); text-decoration: none;">My Profile</a></li>
                                 <?php else: ?>
-                                    <li style="margin-bottom: 8px;"><a href="/unimarket/owner/dashboard.php" style="color: var(--light-text); text-decoration: none;">Dashboard</a></li>
-                                    <li style="margin-bottom: 8px;"><a href="/unimarket/owner/products/add.php" style="color: var(--light-text); text-decoration: none;">Add Product</a></li>
+                                    <li style="margin-bottom: 8px;"><a href="/owner/dashboard.php" style="color: var(--light-text); text-decoration: none;">Dashboard</a></li>
+                                    <li style="margin-bottom: 8px;"><a href="/owner/products/add.php" style="color: var(--light-text); text-decoration: none;">Add Product</a></li>
                                 <?php endif; ?>
                             <?php endif; ?>
                         </ul>
@@ -48,6 +48,6 @@
             </div>
         </footer>
         
-        <script src="/unimarket/assets/js/script.js"></script>
+        <script src="/assets/js/script.js"></script>
     </body>
 </html>
