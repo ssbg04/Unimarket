@@ -7,7 +7,7 @@ require_once '../../config/database.php';
 
 // Check if user ID is provided
 if (!isset($_GET['id'])) {
-    header("Location: /unimarket/admin/users/manage.php");
+    header("Location: /admin/users/manage.php");
     exit();
 }
 
@@ -19,7 +19,7 @@ $stmt->execute([$user_id]);
 $user = $stmt->fetch();
 
 if (!$user) {
-    header("Location: /unimarket/admin/users/manage.php");
+    header("Location: /admin/users/manage.php");
     exit();
 }
 
@@ -78,8 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit User - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         .edit-user-container {
@@ -163,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php include '../../includes/header.php'; ?>
     
     <div class="container edit-user-container">
-        <a href="/unimarket/admin/users/manage.php" class="back-button">
+        <a href="/admin/users/manage.php" class="back-button">
             <i class="fas fa-arrow-left"></i> Back to Users
         </a>
         
