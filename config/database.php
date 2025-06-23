@@ -20,4 +20,6 @@ $conn = new mysqli($host, $user, $password, $database, (int)$port);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+    echo "Host: $host<br>User: $user<br>DB: $database<br>Port: $port<br>";
+
 ?>
