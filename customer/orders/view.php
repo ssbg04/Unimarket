@@ -7,7 +7,7 @@ require_once '../../config/database.php';
 
 // Get order ID from URL
 if (!isset($_GET['order_id'])) {
-    header("Location: /unimarket/customer/orders/list.php");
+    header("Location: /customer/orders/list.php");
     exit();
 }
 
@@ -25,7 +25,7 @@ $order = $stmt->fetch();
 
 // Verify order belongs to current user
 if (!$order || $order['customer_id'] != $_SESSION['user_id']) {
-    header("Location: /unimarket/customer/orders/list.php");
+    header("Location: /customer/orders/list.php");
     exit();
 }
 
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $pdo->commit();
             
             // Redirect to orders list
-            header("Location: /unimarket/customer/orders/list.php");
+            header("Location: /customer/orders/list.php");
             exit();
         } catch (PDOException $e) {
             // Rollback transaction on error
@@ -121,8 +121,8 @@ $total_items = array_sum(array_column($order_items, 'quantity'));
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Details - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         header {
@@ -371,7 +371,7 @@ $total_items = array_sum(array_column($order_items, 'quantity'));
     <?php include '../../includes/header.php'; ?>
     
     <div class="container order-details-container">
-        <a href="/unimarket/customer/profile.php" class="back-link">
+        <a href="/customer/profile.php" class="back-link">
             <i class="fas fa-arrow-left"></i> Back to Profile
         </a>
         
@@ -488,7 +488,7 @@ $total_items = array_sum(array_column($order_items, 'quantity'));
                             <td class="product-cell">
                                 <?php if ($item['image_path']): ?>
                                     <div class="product-image">
-                                        <img src="/unimarket/assets/images/products/<?php echo htmlspecialchars($item['image_path']); ?>" 
+                                        <img src="/assets/images/products/<?php echo htmlspecialchars($item['image_path']); ?>" 
                                              alt="<?php echo htmlspecialchars($item['name']); ?>">
                                     </div>
                                 <?php else: ?>
