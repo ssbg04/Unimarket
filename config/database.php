@@ -1,13 +1,14 @@
 <?php
-$host = 'localhost';
-$dbname = 'unimarket';
-$username = 'root';
-$password = '';
+$host = getenv("MYSQLHOST");
+$port = getenv("MYSQLPORT");
+$user = getenv("MYSQLUSER");
+$pass = getenv("MYSQLPASSWORD");
+$db   = getenv("MYSQLDATABASE");
 
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
+$conn = new mysqli($host, $user, $pass, $db, $port);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+echo "Connected to MySQL on Railway!";
 ?>
