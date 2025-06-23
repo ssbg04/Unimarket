@@ -2,10 +2,10 @@
 $host = getenv("MYSQLHOST");
 $user = getenv("MYSQLUSER");
 $password = getenv("MYSQLPASSWORD");
-$db = getenv("MYSQLDATABASE");
+$database = getenv("MYSQLDATABASE");
 $port = getenv("MYSQLPORT");
 
-$conn = new mysqli($host, $user, $password, $db, $port);
+$conn = new mysqli($host, $user, $password, $database, (int)$port);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
