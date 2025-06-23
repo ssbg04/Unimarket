@@ -7,7 +7,7 @@ require_once '../../config/database.php';
 
 // Check if product ID is provided
 if (!isset($_GET['id'])) {
-    header("Location: /unimarket/owner/products/list.php");
+    header("Location: /owner/products/list.php");
     exit();
 }
 
@@ -19,7 +19,7 @@ $stmt->execute([$product_id, $_SESSION['user_id']]);
 $product = $stmt->fetch();
 
 if (!$product) {
-    header("Location: /unimarket/owner/products/list.php");
+    header("Location: /owner/products/list.php");
     exit();
 }
 
@@ -141,8 +141,8 @@ if (isset($product['size_data']) && $product['size_data']) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Product - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .edit-product-container {
@@ -310,7 +310,7 @@ if (isset($product['size_data']) && $product['size_data']) {
                 <input type="file" name="image" id="productImage" accept="image/*">
                 <div class="image-preview" id="imagePreview">
                     <?php if ($product['image_path']): ?>
-                        <img src="/unimarket/assets/images/products/<?php echo $product['image_path']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                        <img src="/assets/images/products/<?php echo $product['image_path']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                     <?php else: ?>
                         <div class="default-text">No image selected</div>
                     <?php endif; ?>
@@ -387,7 +387,7 @@ if (isset($product['size_data']) && $product['size_data']) {
             
             <div class="button-group">
                 <button type="submit" class="btn-submit">Update Product</button>
-                <a href="/unimarket/owner/products/delete.php?id=<?php echo $product_id; ?>" class="btn-delete" onclick="return confirm('Are you sure you want to delete this product?')">
+                <a href="/owner/products/delete.php?id=<?php echo $product_id; ?>" class="btn-delete" onclick="return confirm('Are you sure you want to delete this product?')">
                     <i class="fas fa-trash"></i> Delete
                 </a>
             </div>
@@ -417,7 +417,7 @@ if (isset($product['size_data']) && $product['size_data']) {
                 reader.readAsDataURL(file);
             } else {
                 <?php if ($product['image_path']): ?>
-                    imagePreview.innerHTML = '<img src="/unimarket/assets/images/products/<?php echo $product['image_path']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">';
+                    imagePreview.innerHTML = '<img src="/assets/images/products/<?php echo $product['image_path']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">';
                 <?php else: ?>
                     imagePreview.innerHTML = '<div class="default-text">No image selected</div>';
                     imagePreview.classList.remove('has-image');
