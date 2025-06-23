@@ -87,8 +87,8 @@ $total_pages = ceil($total_products / $per_page);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse Products - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <style>
         .browse-header {
             display: flex;
@@ -233,16 +233,16 @@ $total_pages = ceil($total_products / $per_page);
             <div class="no-products card">
                 <h3>No products found</h3>
                 <p>Try adjusting your search or filter criteria</p>
-                <a href="/unimarket/customer/products/browse.php" class="btn">Reset Filters</a>
+                <a href="/customer/products/browse.php" class="btn">Reset Filters</a>
             </div>
         <?php else: ?>
             <div class="product-grid">
                 <?php foreach ($products as $product): ?>
                     <div class="product-card card">
-                        <a style="color: black; text-decoration: none;" href="/unimarket/customer/products/view.php?id=<?php echo $product['product_id']; ?>">
+                        <a style="color: black; text-decoration: none;" href="/customer/products/view.php?id=<?php echo $product['product_id']; ?>">
                             <div class="product-image">
                                 <?php if ($product['image_path']): ?>
-                                    <img src="/unimarket/uploads/products/<?php echo $product['image_path']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
+                                    <img src="/uploads/products/<?php echo $product['image_path']; ?>" alt="<?php echo htmlspecialchars($product['name']); ?>">
                                 <?php else: ?>
                                     <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #999;">
                                         <i class="fas fa-box-open" style="font-size: 3rem;"></i>
@@ -255,7 +255,7 @@ $total_pages = ceil($total_products / $per_page);
                                 <p class="stock-info <?php echo $product['stock_quantity'] < 5 ? 'stock-low' : ''; ?>">
                                     <?php echo $product['stock_quantity'] < 5 ? 'Only ' . $product['stock_quantity'] . ' left!' : 'In stock'; ?>
                                 </p>
-                                <a href="/unimarket/customer/products/view.php?id=<?php echo $product['product_id']; ?>" class="btn">
+                                <a href="/customer/products/view.php?id=<?php echo $product['product_id']; ?>" class="btn">
                                     <i class="fas fa-eye"></i> View Details
                                 </a>
                             </div>
@@ -292,7 +292,7 @@ $total_pages = ceil($total_products / $per_page);
     
     <script>
         // Add to cart with quantity validation
-        document.querySelectorAll('form[action="/unimarket/customer/cart.php"]').forEach(form => {
+        document.querySelectorAll('form[action="/customer/cart.php"]').forEach(form => {
             form.addEventListener('submit', function(e) {
                 const quantityInput = this.querySelector('input[name="quantity"]');
                 const max = parseInt(quantityInput.getAttribute('max'));
