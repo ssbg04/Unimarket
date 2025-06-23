@@ -566,7 +566,7 @@ require_once __DIR__ . '/auth_functions.php';
                             <li><a href="/admin/dashboard.php"><i class="fas fa-tachometer-alt"></i> Admin Dashboard</a></li>
                             <li><a href="/admin/users/manage.php"><i class="fas fa-users"></i> Users</a></li>
                             <li><a href="/admin/products/index.php"><i class="fas fa-box"></i> Products</a></li>
-                            <li><a href="/unimarket/admin/orders/manage.php"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+                            <li><a href="/admin/orders/manage.php"><i class="fas fa-shopping-cart"></i> Orders</a></li>
                         <?php else: ?>
                             <li><a href="/owner/dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                             <li><a href="/owner/products/list.php"><i class="fas fa-box-open"></i> Products</a></li>
@@ -729,7 +729,7 @@ require_once __DIR__ . '/auth_functions.php';
             const notificationList = document.getElementById('notificationList');
             const badge = document.getElementById('notificationBadge');
             
-            fetch('/unimarket/customer/notifications.php')
+            fetch('/customer/notifications.php')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
