@@ -1,24 +1,23 @@
 <?php
-// Load environment variables from Railway
-$host = getenv("MYSQLHOST");
-$user = getenv("MYSQLUSER");
-$password = getenv("MYSQLPASSWORD");
-$database = getenv("MYSQLDATABASE");
-$port = getenv("MYSQLPORT");
+$host = getenv("MYSQLHOST");         // mysql-wlgj.railway.internal
+$user = getenv("MYSQLUSER");         // root
+$password = getenv("MYSQLPASSWORD"); // your Railway password
+$database = getenv("MYSQLDATABASE"); // railway
+$port = getenv("MYSQLPORT");         // 3306
 
-// Fallback if any variable is missing (optional but helpful)
+// Optional debug to confirm vars (remove in production)
+// echo "HOST=$host<br>USER=$user<br>DB=$database<br>PORT=$port<br>";
+
+// Check if environment variables are set
 if (!$host || !$user || !$password || !$database || !$port) {
     die("Missing required database environment variables.");
 }
 
-// Create MySQL connection
+// Create a connection
 $conn = new mysqli($host, $user, $password, $database, (int)$port);
 
-// Check connection
+// Check for connection error
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-// Optional: success message
-// echo "Connected to Railway MySQL successfully!";
 ?>
