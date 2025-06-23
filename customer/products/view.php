@@ -7,7 +7,7 @@ require_once '../../config/database.php';
 
 // Check if product ID is provided
 if (!isset($_GET['id'])) {
-    header("Location: /unimarket/customer/products/browse.php");
+    header("Location: /customer/products/browse.php");
     exit();
 }
 
@@ -22,7 +22,7 @@ $stmt->execute([$product_id]);
 $product = $stmt->fetch();
 
 if (!$product) {
-    header("Location: /unimarket/customer/products/browse.php");
+    header("Location: /customer/products/browse.php");
     exit();
 }
 
@@ -86,10 +86,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($product['name']); ?> - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="/unimarket/assets/js/notifications.js"></script>
+    <script src="/assets/js/notifications.js"></script>
     <style>
         .product-detail-container {
             margin-top: 30px;
@@ -363,7 +363,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
     <?php include '../../includes/header.php'; ?>
     
     <div class="container product-detail-container">
-        <a href="/unimarket/customer/products/browse.php" class="back-link">
+        <a href="/customer/products/browse.php" class="back-link">
             <i class="fas fa-arrow-left"></i> Back to Products
         </a>
         
@@ -378,7 +378,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
         <div class="product-main card">
             <div class="product-gallery">
                 <?php if ($product['image_path']): ?>
-                    <img src="/unimarket/uploads/products/<?php echo $product['image_path']; ?>" 
+                    <img src="/uploads/products/<?php echo $product['image_path']; ?>" 
                          alt="<?php echo htmlspecialchars($product['name']); ?>" 
                          class="product-image">
                 <?php else: ?>
