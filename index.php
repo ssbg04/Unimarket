@@ -8,8 +8,8 @@ require_once 'includes/auth_functions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniMarket - University Marketplace</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/public/assets/css/style.css">
+    <link rel="stylesheet" href="/public/assets/css/responsive.css">
     <style>
         header {
             position: fixed;
