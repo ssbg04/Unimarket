@@ -7,7 +7,7 @@ require_once '../../config/database.php';
 
 // Check if order ID is provided
 if (!isset($_GET['order_id'])) {
-    header("Location: /unimarket/customer/orders/list.php");
+    header("Location: /customer/orders/list.php");
     exit();
 }
 
@@ -23,7 +23,7 @@ $stmt->execute([$order_id, $_SESSION['user_id']]);
 $order = $stmt->fetch();
 
 if (!$order) {
-    header("Location: /unimarket/customer/orders/list.php");
+    header("Location: /customer/orders/list.php");
     exit();
 }
 
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['complete_order'])) {
         $success_message = 'Order has been marked as completed. Thank you for your purchase!';
         
         // Redirect to order view page after a short delay
-        header("Refresh: 2; URL=/unimarket/customer/orders/view.php?order_id=" . $order_id);
+        header("Refresh: 2; URL=/customer/orders/view.php?order_id=" . $order_id);
     } catch (Exception $e) {
         $pdo->rollBack();
         $error_message = 'An error occurred while completing the order. Please try again.';
@@ -57,8 +57,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['complete_order'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complete Order - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .complete-order-container {
@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['complete_order'])) {
     <?php include '../../includes/header.php'; ?>
     
     <div class="container complete-order-container">
-        <a href="/unimarket/customer/orders/view.php?order_id=<?php echo $order_id; ?>" class="back-link">
+        <a href="/customer/orders/view.php?order_id=<?php echo $order_id; ?>" class="back-link">
             <i class="fas fa-arrow-left"></i> Back to Order Details
         </a>
         
