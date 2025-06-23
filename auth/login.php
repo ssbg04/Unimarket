@@ -2,7 +2,7 @@
 require_once '../includes/auth_functions.php';
 
 if (isLoggedIn()) {
-    header("Location: /unimarket/index.php");
+    header("Location: /index.php");
     exit();
 }
 
@@ -26,11 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['role'] = $user['role'];
             
             if ($user['role'] === 'admin') {
-                header("Location: /unimarket/admin/dashboard.php");
+                header("Location: /admin/dashboard.php");
             } elseif ($user['role'] === 'owner') {
-                header("Location: /unimarket/owner/dashboard.php");
+                header("Location: /owner/dashboard.php");
             } else {
-                header("Location: /unimarket/index.php");
+                header("Location: /index.php");
             }
             exit();
         } else {
@@ -46,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 <body>
     <?php include '../includes/header.php'; ?>
@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
             
             <p style="text-align: center; margin-top: 20px;">
-                Don't have an account? <a href="/unimarket/auth/register.php">Register here</a>
+                Don't have an account? <a href="/auth/register.php">Register here</a>
             </p>
         </div>
     </div>
