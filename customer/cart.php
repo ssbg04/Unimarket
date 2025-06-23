@@ -179,10 +179,10 @@ $total = array_reduce($cart_items, function($sum, $item) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="/unimarket/assets/js/notifications.js"></script>
+    <script src="/assets/js/notifications.js"></script>
     <style>
         /* Cart item styles */
         .cart-container {
@@ -472,7 +472,7 @@ $total = array_reduce($cart_items, function($sum, $item) {
                 <i class="fas fa-shopping-cart"></i>
                 <h2>Your cart is empty</h2>
                 <p>Looks like you haven't added any items to your cart yet.</p>
-                <a href="/unimarket/customer/products/browse.php" class="btn">Continue Shopping</a>
+                <a href="/customer/products/browse.php" class="btn">Continue Shopping</a>
             </div>
         <?php else: ?>
             <div class="cart-container">
@@ -481,7 +481,7 @@ $total = array_reduce($cart_items, function($sum, $item) {
                         <div class="cart-item card">
                             <div class="item-image">
                                 <?php if ($item['image_path']): ?>
-                                    <img src="/unimarket/assets/images/products/<?php echo $item['image_path']; ?>" 
+                                    <img src="/assets/images/products/<?php echo $item['image_path']; ?>" 
                                          alt="<?php echo htmlspecialchars($item['product_name']); ?>">
                                 <?php else: ?>
                                     <div class="no-image">
@@ -530,7 +530,7 @@ $total = array_reduce($cart_items, function($sum, $item) {
                     </div>
                     
                     <div class="cart-actions">
-                        <a href="/unimarket/customer/products/browse.php" class="btn btn-secondary">
+                        <a href="/customer/products/browse.php" class="btn btn-secondary">
                             <i class="fas fa-arrow-left"></i> Continue Shopping
                         </a>
                         <form method="POST" id="checkoutForm">
