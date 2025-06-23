@@ -43,7 +43,7 @@ function isAdmin() {
 function redirectIfNotLoggedIn() {
     if (!isLoggedIn()) {
         $_SESSION['redirect_url'] = $_SERVER['REQUEST_URI'];
-        header("Location: /unimarket/auth/login.php");
+        header("Location: /auth/login.php");
         exit();
     }
 }
@@ -53,7 +53,7 @@ function redirectIfNotLoggedIn() {
  */
 function redirectIfNotOwner() {
     if (!isOwner()) {
-        header("Location: /unimarket/index.php");
+        header("Location: /index.php");
         exit();
     }
 }
@@ -63,7 +63,7 @@ function redirectIfNotOwner() {
  */
 function redirectIfNotCustomer() {
     if (!isCustomer()) {
-        header("Location: /unimarket/index.php");
+        header("Location: /index.php");
         exit();
     }
 }
@@ -73,7 +73,7 @@ function redirectIfNotCustomer() {
  */
 function redirectIfNotAdmin() {
     if (!isAdmin()) {
-        header("Location: /unimarket/index.php");
+        header("Location: /index.php");
         exit();
     }
 }
