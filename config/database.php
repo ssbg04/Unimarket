@@ -1,25 +1,14 @@
 <?php
-$host = getenv("MYSQLHOST");         // mysql-wlgj.railway.internal
-$user = getenv("MYSQLUSER");         // root
-$password = getenv("MYSQLPASSWORD"); // your Railway password
-$database = getenv("MYSQLDATABASE"); // railway
-$port = getenv("MYSQLPORT");         // 3306
+$host = getenv("MYSQLHOST");
+$db   = getenv("MYSQLDATABASE");
+$user = getenv("MYSQLUSER");
+$pass = getenv("MYSQLPASSWORD");
+$port = getenv("MYSQLPORT") ?: 3306;
 
-// Optional debug to confirm vars (remove in production)
-// echo "HOST=$host<br>USER=$user<br>DB=$database<br>PORT=$port<br>";
-
-// Check if environment variables are set
-if (!$host || !$user || !$password || !$database || !$port) {
-    die("Missing required database environment variables.");
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db;port=$port;charset=utf8mb4", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
 }
-
-// Create a connection
-$conn = new mysqli($host, $user, $password, $database, (int)$port);
-
-// Check for connection error
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-    echo "Host: $host<br>User: $user<br>DB: $database<br>Port: $port<br>";
-
 ?>
