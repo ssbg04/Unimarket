@@ -2,7 +2,7 @@
 require_once '../includes/auth_functions.php';
 
 if (isLoggedIn()) {
-    header("Location: /unimarket/index.php");
+    header("Location: /index.php");
     exit();
 }
 
@@ -116,8 +116,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <style>
         .role-selector {
             display: flex;
@@ -178,7 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             <?php if ($success): ?>
                 <div class="alert alert-success">
-                    Registration successful! You can now <a href="/unimarket/auth/login.php">login</a>.
+                    Registration successful! You can now <a href="/auth/login.php">login</a>.
                 </div>
             <?php else: ?>
                 <?php if (isset($errors['general'])): ?>
@@ -264,7 +264,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <button type="submit" class="btn" style="width: 100%;">Register</button>
                     
                     <p style="text-align: center; margin-top: 20px;">
-                        Already have an account? <a href="/unimarket/auth/login.php">Login here</a>
+                        Already have an account? <a href="/auth/login.php">Login here</a>
                     </p>
                 </form>
             <?php endif; ?>
