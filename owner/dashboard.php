@@ -86,8 +86,8 @@ $recent_orders = $recent_orders_stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Owner Dashboard - UniMarket</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <style>
         /* Sidebar Styles */
         .sidebar {
@@ -493,7 +493,7 @@ $recent_orders = $recent_orders_stmt->fetchAll();
             </ul>
             
             <div class="logout-link">
-                <a href="/unimarket/auth/logout.php">
+                <a href="/auth/logout.php">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -533,7 +533,7 @@ $recent_orders = $recent_orders_stmt->fetchAll();
                             <?php foreach ($recent_orders as $order): ?>
                                 <tr>
                                     <td>
-                                        <a href="/unimarket/owner/orders/view.php?order_id=<?php echo $order['order_id']; ?>" id="order-number">
+                                        <a href="/owner/orders/view.php?order_id=<?php echo $order['order_id']; ?>" id="order-number">
                                             #<?php echo $order['order_id']; ?>
                                         </a>
                                     </td>
@@ -548,7 +548,7 @@ $recent_orders = $recent_orders_stmt->fetchAll();
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <a href="/unimarket/owner/orders/list.php" class="view-all-btn">
+                    <a href="/owner/orders/list.php" class="view-all-btn">
                         <i class="fas fa-list"></i>
                         View All Orders
                     </a>
