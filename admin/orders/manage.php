@@ -35,8 +35,8 @@ $orders = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Orders - UniMarket Admin</title>
-    <link rel="stylesheet" href="/unimarket/assets/css/style.css">
-    <link rel="stylesheet" href="/unimarket/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         .manage-orders {
@@ -198,7 +198,7 @@ $orders = $stmt->fetchAll();
     <?php include '../../includes/header.php'; ?>
     
     <div class="container manage-orders">
-        <a href="/unimarket/admin/dashboard.php" class="back-button">
+        <a href="/admin/dashboard.php" class="back-button">
             <i class="fas fa-arrow-left"></i> Back to Dashboard
         </a>
 
