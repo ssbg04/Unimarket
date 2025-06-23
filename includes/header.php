@@ -7,8 +7,8 @@ require_once __DIR__ . '/auth_functions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($page_title) ? $page_title . ' - ' : ''; ?>UniMarket - University Marketplace</title>
-    <link rel="stylesheet" href="/public/assets/css/style.css">
-    <link rel="stylesheet" href="/public/assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .logo{
@@ -531,16 +531,16 @@ require_once __DIR__ . '/auth_functions.php';
 
     <header>
         <div class="container header-content">
-            <a href="/unimarket/index.php" class="logo">
-                <img src="/unimarket/assets/images/logo/logo.png" alt="UniMarket Logo">
+            <a href="/index.php" class="logo">
+                <img src="/assets/images/logo/logo.png" alt="UniMarket Logo">
             </a>
             
             <nav>
                 <ul>
                     <?php if (isLoggedIn()): ?>
                         <?php if (isCustomer()): ?>
-                            <li><a href="/unimarket/customer/products/browse.php"><i class="fas fa-search"></i> Browse</a></li>
-                            <li><a href="/unimarket/customer/cart.php"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                            <li><a href="/customer/products/browse.php"><i class="fas fa-search"></i> Browse</a></li>
+                            <li><a href="/customer/cart.php"><i class="fas fa-shopping-cart"></i> Cart</a></li>
                             <li class="notification-container">
                                 <a href="#" onclick="openNotificationModal(); return false;" class="notification-btn">
                                     <i class="fas fa-bell"></i> Notifications
@@ -561,21 +561,21 @@ require_once __DIR__ . '/auth_functions.php';
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="/unimarket/customer/profile.php"><i class="fas fa-user"></i> Profile</a></li>
+                            <li><a href="/customer/profile.php"><i class="fas fa-user"></i> Profile</a></li>
                         <?php elseif (isAdmin()): ?>
-                            <li><a href="/unimarket/admin/dashboard.php"><i class="fas fa-tachometer-alt"></i> Admin Dashboard</a></li>
-                            <li><a href="/unimarket/admin/users/manage.php"><i class="fas fa-users"></i> Users</a></li>
-                            <li><a href="/unimarket/admin/products/index.php"><i class="fas fa-box"></i> Products</a></li>
+                            <li><a href="/admin/dashboard.php"><i class="fas fa-tachometer-alt"></i> Admin Dashboard</a></li>
+                            <li><a href="/admin/users/manage.php"><i class="fas fa-users"></i> Users</a></li>
+                            <li><a href="/admin/products/index.php"><i class="fas fa-box"></i> Products</a></li>
                             <li><a href="/unimarket/admin/orders/manage.php"><i class="fas fa-shopping-cart"></i> Orders</a></li>
                         <?php else: ?>
-                            <li><a href="/unimarket/owner/dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                            <li><a href="/unimarket/owner/products/list.php"><i class="fas fa-box-open"></i> Products</a></li>
+                            <li><a href="/owner/dashboard.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                            <li><a href="/owner/products/list.php"><i class="fas fa-box-open"></i> Products</a></li>
                         <?php endif; ?>
                         <li><a href="#" onclick="openLogoutModal(); return false;" class="logout-link"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     <?php else: ?>
-                        <li><a href="/unimarket/index.php"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="/unimarket/auth/login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                        <li><a href="/unimarket/auth/register.php"><i class="fas fa-user-plus"></i> Register</a></li>
+                        <li><a href="/index.php"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="/auth/login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                        <li><a href="/auth/register.php"><i class="fas fa-user-plus"></i> Register</a></li>
                     <?php endif; ?>
                 </ul>
             </nav>
