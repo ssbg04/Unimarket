@@ -24,7 +24,7 @@ require_once 'includes/auth_functions.php';
         }
 
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/unimarket/assets/images/hero/hero-bg.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/hero/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
