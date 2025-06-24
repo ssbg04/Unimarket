@@ -88,6 +88,7 @@ $recent_orders = $recent_orders_stmt->fetchAll();
     <title>Owner Dashboard - UniMarket</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+  <link rel="icon" type="image/x-icon" href="/assets/images/logo/tab-logo.png">
     <style>
         /* Sidebar Styles */
         .sidebar {
