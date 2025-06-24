@@ -9,6 +9,7 @@ require_once __DIR__ . '/auth_functions.php';
     <title><?php echo isset($page_title) ? $page_title . ' - ' : ''; ?>UniMarket - University Marketplace</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/logo/tab-logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .logo{
