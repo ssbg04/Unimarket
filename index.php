@@ -10,6 +10,7 @@ require_once 'includes/auth_functions.php';
     <title>UniMarket - University Marketplace</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link rel="icon" type="image/x-icon" href="/assets/images/logo/tab-logo.png">
     <style>
         header {
             position: fixed;
