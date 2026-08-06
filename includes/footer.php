@@ -1,53 +1,81 @@
 </main>
-        
-        <footer style="background-color: var(--primary-dark); color: var(--light-text); padding: 40px 0; margin-top: 40px;">
-            <div class="container" style="background: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; border: none; margin: 0 auto; padding: 0 30px;">
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
-                    <div>
-                        <h3 style="margin-bottom: 15px; color: var(--light-text);">UniMarket</h3>
-                        <p>Your university's premier marketplace for buying and selling products within the campus community.</p>
-                    </div>
-                    
-                    <div>
-                        <h3 style="margin-bottom: 15px; color: var(--light-text);">Quick Links</h3>
-                        <ul style="list-style: none;">
-                            <li style="margin-bottom: 8px;"><a href="/index.php" style="color: var(--light-text); text-decoration: none;">Home</a></li>
-                            <?php if (!isLoggedIn()): ?>
-                                <li style="margin-bottom: 8px;"><a href="/auth/login.php" style="color: var(--light-text); text-decoration: none;">Login</a></li>
-                                <li style="margin-bottom: 8px;"><a href="/auth/register.php" style="color: var(--light-text); text-decoration: none;">Register</a></li>
-                            <?php else: ?>
-                                <?php if (isCustomer()): ?>
-                                    <li style="margin-bottom: 8px;"><a href="/customer/products/browse.php" style="color: var(--light-text); text-decoration: none;">Browse Products</a></li>
-                                    <li style="margin-bottom: 8px;"><a href="/customer/profile.php" style="color: var(--light-text); text-decoration: none;">My Profile</a></li>
-                                <?php else: ?>
-                                    <li style="margin-bottom: 8px;"><a href="/owner/dashboard.php" style="color: var(--light-text); text-decoration: none;">Dashboard</a></li>
-                                    <li style="margin-bottom: 8px;"><a href="/owner/products/add.php" style="color: var(--light-text); text-decoration: none;">Add Product</a></li>
-                                <?php endif; ?>
-                            <?php endif; ?>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 style="margin-bottom: 15px; color: var(--light-text);">Contact</h3>
-                        <ul style="list-style: none;">
-                            <li style="margin-bottom: 8px;"><i class="fas fa-envelope" style="margin-right: 8px;"></i> contact@unimarket.edu</li>
-                            <li style="margin-bottom: 8px;"><i class="fas fa-phone" style="margin-right: 8px;"></i> (123) 456-7890</li>
-                            <li style="margin-bottom: 8px;"><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> University Campus</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 30px; padding-top: 20px; text-align: center;">
-                    <p>&copy; <?php echo date('Y'); ?> UniMarket. All rights reserved.</p>
-                    <div style="margin-top: 15px;">
-                        <a href="#" style="color: var(--light-text); margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
-                        <a href="#" style="color: var(--light-text); margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" style="color: var(--light-text); margin: 0 10px; font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
-                    </div>
+
+<footer class="bg-brand-background border-t border-brand-muted/20 py-20 px-6 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <!-- Brand -->
+            <div class="col-span-1 md:col-span-1 space-y-6">
+                 <a href="/index.php" class="flex items-center gap-3 group">
+                     <img src="/assets/images/logo/logo.svg" alt="UniMarket Logo" class="h-7 w-auto transition-all dark:invert">
+                     <span class="serif text-xl font-semibold tracking-tight text-brand-text">UniMarket</span>
+                 </a>
+                <p class="text-brand-muted font-light text-sm leading-relaxed max-w-xs">
+                    The university's premier exchange for students. Curated, secure, and community-driven.
+                </p>
+                <div class="flex gap-4 text-brand-muted">
+                    <a href="#" class="hover:text-brand-text transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-brand-text transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-brand-text transition-colors"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
-        </footer>
+            
+            <!-- Links -->
+            <div class="space-y-6">
+                <h4 class="serif text-lg text-brand-text">Navigation</h4>
+                <ul class="space-y-3 text-sm font-medium text-brand-muted">
+                    <li><a href="/index.php" class="hover:text-brand-text transition-colors">Home</a></li>
+                    <?php if (!isLoggedIn()): ?>
+                        <li><a href="/auth/login.php" class="hover:text-brand-text transition-colors">Login</a></li>
+                        <li><a href="/auth/register.php" class="hover:text-brand-text transition-colors">Register</a></li>
+                    <?php else: ?>
+                        <?php if (isCustomer()): ?>
+                            <li><a href="/customer/products/browse.php" class="hover:text-brand-text transition-colors">Browse Products</a></li>
+                            <li><a href="/customer/profile.php" class="hover:text-brand-text transition-colors">My Profile</a></li>
+                        <?php else: ?>
+                            <li><a href="/owner/dashboard.php" class="hover:text-brand-text transition-colors">Dashboard</a></li>
+                            <li><a href="/owner/products/add.php" class="hover:text-brand-text transition-colors">Add Product</a></li>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                </ul>
+            </div>
+            
+            <!-- Support -->
+            <div class="space-y-6">
+                <h4 class="serif text-lg text-brand-text">Support</h4>
+                <ul class="space-y-3 text-sm font-medium text-brand-muted">
+                    <li class="flex items-center gap-3 hover:text-brand-text transition-colors cursor-pointer">
+                        <i class="fas fa-envelope w-4"></i> contact@unimarket.edu
+                    </li>
+                    <li class="flex items-center gap-3 hover:text-brand-text transition-colors cursor-pointer">
+                        <i class="fas fa-phone w-4"></i> (123) 456-7890
+                    </li>
+                    <li class="flex items-center gap-3 hover:text-brand-text transition-colors cursor-pointer">
+                        <i class="fas fa-map-marker-alt w-4"></i> University Campus
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="space-y-6">
+                <h4 class="serif text-lg text-brand-text">Stay Updated</h4>
+                <p class="text-brand-muted text-sm font-light leading-relaxed">Get notified about the latest campus arrivals.</p>
+                <form class="flex gap-2">
+                    <input type="email" placeholder="Email address" class="bg-brand-surface border border-brand-muted/20 rounded-xl px-4 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-brand-primary transition-all text-brand-text">
+                    <button class="bg-brand-text text-brand-background px-4 py-2 rounded-xl text-sm font-medium hover:bg-brand-primary transition-all">Join</button>
+                </form>
+            </div>
+        </div>
         
-        <script src="/assets/js/script.js"></script>
-    </body>
+        <div class="pt-8 border-t border-brand-muted/20 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-brand-muted text-xs font-light">&copy; <?php echo date('Y'); ?> UniMarket. All rights reserved.</p>
+            <div class="flex gap-6 text-xs font-medium text-brand-muted">
+                <a href="#" class="hover:text-brand-text transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-brand-text transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/assets/js/script.js"></script>
+</body>
 </html>
